@@ -16,6 +16,6 @@ class Student extends Model
     }
 
     public function programs() {
-        return $this->belongsToMany(Program::class, 'Program_students', 'program_id', 'student_id');
+        return $this->belongsToMany(Program::class, 'program_students');
     }
 }

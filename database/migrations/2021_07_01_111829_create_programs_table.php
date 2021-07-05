@@ -15,8 +15,20 @@ class CreateProgramsTable extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
+
+            $table->text('code');
+            $table->text('name');
+            $table->longText('description');
+            $table->integer('student_number');
+            $table->integer('ad_student_number');
+            $table->decimal('rate');
+            $table->decimal('ad_rate');
+            $table->decimal('cost');
+            $table->integer('discount');
+
             $table->timestamps();
         });
+        
     }
 
     /**

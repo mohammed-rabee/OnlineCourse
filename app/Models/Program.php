@@ -9,7 +9,7 @@ class Program extends Model
     //
     public function majors() {
         // remmeber to recheck it
-        return $this->belongsToMany(Major::class, 'Major_programs', 'major_id', 'program_id');
+        return $this->belongsToMany(Major::class, 'major_programs');
     }
 
     public function sections() {
@@ -17,9 +17,9 @@ class Program extends Model
     }
 
     public function teachers() {
-        return $this->belongsToMany(Teacher::class, 'Porgram_teachers', 'program_id', 'teacher_id');
+        return $this->belongsToMany(Teacher::class, 'porgram_teachers');
     }
     public function students() {
-        return $this->belongsToMany(Student::class, 'Program_students', 'program_id', 'student_id');
+        return $this->belongsToMany(Student::class, 'program_students');
     }
 }

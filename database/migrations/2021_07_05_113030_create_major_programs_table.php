@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentsTable extends Migration
+class CreateMajorProgramsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('major_programs', function (Blueprint $table) {
             $table->id();
+            
             $table->integer('major_id')->unsigned();
             $table->foreign('major_id')->references('id')->on('majors')->onDelete('cascade');
-            
+         // ---------------------------------------------------------------------------------
+            $table->integer('program_id')->unsigned();
+            $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('major_programs');
     }
 }
