@@ -9,11 +9,11 @@ class Program extends Model
     //
     public function majors() {
         // remmeber to recheck it
-        return $this->belongsToMany(Major::class, 'major_programs');
+        return $this->belongsToMany(Major::class, 'major_program_section');
     }
 
     public function sections() {
-        return $this->hasMany(Section::class);
+        return $this->belongsToMany(Section::class, 'major_program_section');
     }
 
     public function teachers() {

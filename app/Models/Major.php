@@ -16,6 +16,10 @@ class Major extends Model
     }
 
     public function programs() {
-        return $this->belongsToMany(Program::class, 'major_programs');
+        return $this->belongsToMany(Program::class, 'major_program_section');
+    }
+
+    public function sections() {
+        return $this->belongsToMany(Section::class, 'major_program_section');
     }
 }
