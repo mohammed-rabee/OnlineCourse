@@ -11,15 +11,8 @@ class Major extends Model
         return $this->belongsTo(Department::class);
     }
 
-    public function students() {
-        return $this->hasMany(Student::class);
-    }
+    public function years() {
+        return $this->belongToMany(Year::class, 'major_years');
+    } 
 
-    public function programs() {
-        return $this->belongsToMany(Program::class, 'major_program_section');
-    }
-
-    public function sections() {
-        return $this->belongsToMany(Section::class, 'major_program_section');
-    }
 }
