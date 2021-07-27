@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class YearProgram extends Model
 {
     //
-    protected $fillable = [
-        'year_id','program_id'
-    ];
+    // protected $fillable = [
+    //     'year_id','program_id'
+    // ];
 
     public function sections() {
         return $this->hasMany(Section::class);

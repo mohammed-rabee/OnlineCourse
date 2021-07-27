@@ -18,6 +18,7 @@ class CreateTeachesTable extends Migration
 
             $table->integer('yearProgramId')->references('id')->on('year_programs')->onDelete('cascade');
             $table->integer('teacherId')->references('id')->on('teachers')->onDelete('cascade');
+            $table->integer('sectionId')->references('id')->on('sections')->onDelete('cascade');
 
             $table->double('currentPayment');
             $table->double('leftPayment');

@@ -19,6 +19,7 @@ class CreateRegistersTable extends Migration
 
             $table->integer('yearProgramId')->references('id')->on('year_programs')->onDelete('cascade');
             $table->integer('studentId')->references('id')->on('students')->onDelete('cascade');
+            $table->integer('sectionId')->references('id')->on('sections')->onDelete('cascade');
 
             $table->double('currentPayment');
             $table->double('leftPayment');

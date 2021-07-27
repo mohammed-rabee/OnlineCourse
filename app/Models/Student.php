@@ -18,4 +18,8 @@ class Student extends Model
     public function programs() {
         return $this->belongsToMany(YearProgram::class, 'registers');
     }
+
+    public function sections() {
+        return $this->belongsToMany(Section::class, 'registers');
+    }
 }
