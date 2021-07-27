@@ -21,12 +21,12 @@ class CreateStudentsTable extends Migration
             $table->string('lname')->nullable();
 
             $table->string('username');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
 
             $table->integer('age');
-            $table->string('mobile');
-            
+            $table->string('mobile')->unique();
+
             $table->timestamps();
         });
     }
