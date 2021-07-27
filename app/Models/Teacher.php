@@ -8,6 +8,6 @@ class Teacher extends Model
 {
     //
     public function programs() {
-        return $this->belongsToMany(Program::class, 'porgram_teachers');
+        return $this->belongsToMany(YearProgram::class, 'teaches');
     }
 }

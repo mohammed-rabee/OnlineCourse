@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSectionsTable extends Migration
+class CreateYearsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('years', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('yearPorgramsId')->references('id')->on('year_programs')->onDelete('cascade');
-            $table->integer('maxNumberOfStudent');
-
+            $table->integer('majorId')->references('id')->on('majors')->onDelete('cascade');
+            $table->string('name');
+            
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sections');
+        Schema::dropIfExists('years');
     }
 }

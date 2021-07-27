@@ -15,8 +15,17 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->integer('major_id')->unsigned();
-            $table->foreign('major_id')->references('id')->on('majors')->onDelete('cascade');
+
+            $table->integer('yearId')->references('id')->on('years')->onDelete('cascade');
+            $table->string('fname')->nullable();
+            $table->string('lname')->nullable();
+
+            $table->string('username');
+            $table->string('email');
+            $table->string('password');
+
+            $table->integer('age');
+            $table->string('mobile');
             
             $table->timestamps();
         });

@@ -12,7 +12,7 @@ class Major extends Model
     }
 
     public function years() {
-        return $this->belongToMany(Year::class, 'major_years');
+        return $this->hasMany(Year::class);
     } 
 
 }

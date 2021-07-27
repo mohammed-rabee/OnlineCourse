@@ -11,11 +11,11 @@ class Student extends Model
     //     return $this->belongsToMany(Session::class,'Students_Sessions', 'user_id', 'session_id');
     // }
 
-    public function major() {
-        return $this->belongsTo(Major::class);
+    public function year() {
+        return $this->belongsTo(Year::class);
     }
 
     public function programs() {
-        return $this->belongsToMany(Program::class, 'program_students');
+        return $this->belongsToMany(YearProgram::class, 'registers');
     }
 }

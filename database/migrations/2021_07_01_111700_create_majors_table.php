@@ -15,12 +15,11 @@ class CreateMajorsTable extends Migration
     {
         Schema::create('majors', function (Blueprint $table) {
             $table->id();
-            $table->integer('department_id')->unsigned();
-            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
 
+            $table->integer('departmentId')->references('id')->on('departments')->onDelete('cascade');
             $table->string('name');
-            $table->integer('student_number');
             $table->integer('discount');
+            $table->integer('numberOfYears');
 
             $table->timestamps();
         });
