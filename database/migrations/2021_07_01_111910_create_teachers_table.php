@@ -16,14 +16,7 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
 
-            $table->string('fname')->nullable();
-            $table->string('lname')->nullable();
-
-            $table->string('username');
-            $table->string('email');
-            
-            $table->integer('age');
-            $table->string('mobile');
+            $table->integer('user_id')->references('id')->on('users')->onDelete('cascade');
             
             $table->timestamps();
         });
